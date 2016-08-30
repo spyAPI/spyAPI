@@ -10,13 +10,7 @@ feature 'spyAPI' do
   context 'API key is given' do
     before do
       api = Api.create(key: 'abcdefghijklmnopqrstuvwxyz0123456789')
-      json = Json.create(name: 'test-data', content: "Hello, World!")
-      json.api = api
-      json.save
-      p '==============='
-      p api.jsons[0]
-      p '================'
-
+      Json.create(name: 'test-data', content: "Hello, World!", api_id: api.id)
     end
     scenario 'JSON is returned' do
       visit '/api?api-key=abcdefghijklmnopqrstuvwxyz0123456789&json=test-data'
