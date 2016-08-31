@@ -18,3 +18,12 @@ def add_api
   fill_in 'Name', with: 'Test API'
   click_button 'Create Api'
 end
+
+def add_JSON
+  visit '/'
+  click_link 'Test API'
+  click_link 'Add JSON'
+  fill_in 'Name', with: 'Test-data'
+  fill_in 'Content', with: '{"message":"hello world"}'
+  click_button 'Create Json'
+end

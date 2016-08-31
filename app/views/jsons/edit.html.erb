@@ -1,0 +1,9 @@
+<%= form_for [@api, @json] do |f| %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit class: 'btn btn-primary'%>
+</div>
+<% end %>

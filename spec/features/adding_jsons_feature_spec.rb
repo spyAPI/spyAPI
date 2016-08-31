@@ -28,4 +28,27 @@ feature 'adding JSONs' do
   end
 
 
+  context 'viewing JSONs' do
+    scenario 'user can view JSON' do
+      add_JSON
+      expect(page).to have_content '{"message":"hello world"}'
+    end
+  end
+
+  context 'editing JSONs'
+  scenario 'user can update a JSON' do
+    add_JSON
+    visit '/'
+    click_link 'Test API'
+    click_link 'Edit JSON'
+    fill_in 'Name', with: 'More test-data'
+    fill_in 'Content', with: '{"different message":"goodbye world"}'
+    click_button 'Update Json'
+    expect(page).to have_content '{"different message":"goodbye world"}'
+    expect(page).not_to have_content '{"message":"hello world"}'
+  end
+
+
+
+
 end

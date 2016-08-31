@@ -4,7 +4,7 @@ class ApisController < ApplicationController
 
   before_action :authenticate_user!, except: [:index]
   before_action :find_by_params, except: [:index, :new, :create]
-  before_action :api_owner, only: [:update, :destroy, :edit]
+  before_action :api_owner, except: [:index, :new, :create]
 
 
   def index
@@ -64,7 +64,7 @@ class ApisController < ApplicationController
 
   def api_owner
     unless @api.user_id == current_user.id
-      flash[:notice] = "Permission denied: only owner has edit/delete privileges"
+      flash[:notice] = "Permission denied: only owner has access"
       redirect_to '/'
     end
   end
