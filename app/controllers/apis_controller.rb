@@ -1,6 +1,7 @@
 
 class ApisController < ApplicationController
 
+  before_action :allow_requests
   before_action :authenticate_user!, except: [:index]
   before_action :find_by_params, except: [:index, :new, :create]
   before_action :api_owner, except: [:index, :new, :create]
@@ -60,4 +61,7 @@ class ApisController < ApplicationController
     end
   end
 
+  def allow_requests
+    headers['Access-Control-Allow-Origin'] = '*'
+  end
 end

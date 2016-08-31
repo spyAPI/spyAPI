@@ -13,7 +13,8 @@ class Api < ApplicationRecord
       return JSON.parse('{"message":"No API Key found in headers, body or querystring"}')
     else
       api = Api.where(key: params['api-key'])
-      return api[0].jsons.select {|x| x.name == params['json']}
+      json = api[0].jsons.select {|x| x.name == params['json']}
+      return json[0]['content']
     end
   end
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :apis do
     resources :jsons
   end
