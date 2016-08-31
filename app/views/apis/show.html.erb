@@ -7,4 +7,5 @@
   No JSONs yet
 <% end %>
 <%= link_to 'Edit API', edit_api_path(@api) %>
+<%= link_to 'Delete API', api_path(@api), method: :delete %>
 <%= link_to 'Add JSON', new_api_json_path(@api) %>

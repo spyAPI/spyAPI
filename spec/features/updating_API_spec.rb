@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 feature 'updating an API' do
+
   before do
     sign_up
     add_api
   end
+
   scenario 'user can update an API key linked to their account' do
     key = Api.last.key
     visit '/'
@@ -16,6 +18,7 @@ feature 'updating an API' do
     expect(page).not_to have_content key
     expect(page).to have_content Api.last.key
   end
+
   scenario 'user can update an API name linked to their account' do
     key = Api.last.key
     visit '/'
@@ -27,4 +30,12 @@ feature 'updating an API' do
     expect(page).not_to have_content 'name: Test API'
     expect(page).to have_content key
   end
+
+  scenario 'user can delete an API linked to their account' do
+    visit '/'
+    click_link 'Test API'
+    click_link 'Delete API'
+    expect(page).not_to(have_content("Test API"))
+  end
+
 end
