@@ -15,7 +15,6 @@ feature 'User can sign in and out' do
 
   end
 
-
   context 'User signed in on the homepage' do
     before do
       visit '/'
@@ -36,7 +35,5 @@ feature 'User can sign in and out' do
       expect(page).not_to(have_link("Sign up"))
       expect(page).not_to(have_link("Sign in"))
     end
-
   end
-
 end

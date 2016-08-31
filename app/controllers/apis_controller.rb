@@ -19,6 +19,7 @@ class ApisController < ApplicationController
     key = SecureRandom.hex(20)
     @api = Api.create(api_params)
     @api.key = key
+    @api.user_id = current_user.id
     @api.save
     redirect_to '/'
   end
