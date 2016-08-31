@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :apis
+  resources :apis do
+    resources :jsons
+  end
+
   get 'welcome/index'
 
   devise_for :users
