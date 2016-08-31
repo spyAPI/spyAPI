@@ -2,4 +2,14 @@
 <center>
     <h1>Welcome to Spy API</h1>
     <p class="lead">CSS Jack would be proud of.</p>
+      <% if user_signed_in? && @apis.any? %>
+        <div class="api-list">
+          <% @apis.each do |api| %>
+            <div class="api">
+              <div class="api-name"> name: <%= api.name %> </div>
+              <div class="api-key"> key: <%= api.key %> </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 </center>
