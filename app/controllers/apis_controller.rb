@@ -28,6 +28,20 @@ class ApisController < ApplicationController
     @api = Api.find(params[:id])
   end
 
+  def edit
+    @api = Api.find(params[:id])
+  end
+
+  def update
+    @api = Api.find(params[:id])
+    @api.name = params[:api][:name]
+    if params[:key][:api] == "1"
+      @api.key = SecureRandom.hex(20)
+    end
+    @api.save
+    redirect_to '/'
+  end
+
   private
 
   def api_params
