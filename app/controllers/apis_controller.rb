@@ -2,6 +2,11 @@ require 'securerandom'
 
 class ApisController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index]
+  before_action :find_by_params, except: [:index, :new, :create]
+  before_action :api_owner, only: [:update, :destroy, :edit]
+
+
   def index
     unless params['api-key']
       render json: JSON.parse('{"message":"No API Key found in headers, body or querystring"}')
@@ -25,15 +30,14 @@ class ApisController < ApplicationController
   end
 
   def show
-    @api = Api.find(params[:id])
+
   end
 
   def edit
-    @api = Api.find(params[:id])
+
   end
 
   def update
-    @api = Api.find(params[:id])
     @api.name = params[:api][:name]
     if params[:key][:api] == "1"
       @api.key = SecureRandom.hex(20)
@@ -42,9 +46,27 @@ class ApisController < ApplicationController
     redirect_to '/'
   end
 
+  def destroy
+    @api.destroy
+    flash[:notice] = "API successfully deleted"
+    redirect_to '/'
+  end
+
   private
 
   def api_params
     params.require(:api).permit(:name)
   end
+
+  def find_by_params
+    @api = Api.find(params[:id])
+  end
+
+  def api_owner
+    unless @api.user_id == current_user.id
+      flash[:notice] = "Permission denied: only owner has edit/delete privileges"
+      redirect_to '/'
+    end
+  end
+
 end
