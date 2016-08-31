@@ -1,0 +1,9 @@
+<%= form_for @api, html: {multipart: true} do |f| %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :key, 'Refresh API key?' %>
+  <%= check_box :key, 'api' %>
+  <%= f.submit class: 'btn btn-primary'%>
+  <% end %>
+</div>
