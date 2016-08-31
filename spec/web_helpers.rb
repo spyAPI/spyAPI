@@ -12,3 +12,9 @@ def sign_out
   visit '/'
   click_link 'Sign out'
 end
+
+def add_api
+  click_link 'add API'
+  fill_in 'Name', with: 'Test API'
+  click_button 'Create Api'
+end

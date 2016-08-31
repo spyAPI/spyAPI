@@ -6,7 +6,7 @@
         <div class="api-list">
           <% current_user.apis.each do |api| %>
             <div class="api">
-              <div class="api-name"> name: <%= api.name %> </div>
+              <div class="api-name"> name: <%= link_to api.name, api_path(api) %> </div>
               <div class="api-key"> key: <%= api.key %> </div>
           <% end %>
         </div>

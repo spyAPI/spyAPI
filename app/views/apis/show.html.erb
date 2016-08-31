@@ -1,0 +1,10 @@
+<% if @api.jsons.any? %>
+  <% @api.jsons.each do |json| %>
+  name: <%= json.name %>
+  content: <%= json.content %>
+  <% end %>
+  <% else %>
+  No JSONs yet
+<% end %>
+
+<%= link_to 'Add JSON', new_api_json_path(@api) %>

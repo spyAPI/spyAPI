@@ -24,6 +24,10 @@ class ApisController < ApplicationController
     redirect_to '/'
   end
 
+  def show
+    @api = Api.find(params[:id])
+  end
+
   private
 
   def api_params
