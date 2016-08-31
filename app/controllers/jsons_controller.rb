@@ -1,6 +1,6 @@
 class JsonsController < ApplicationController
 
-  before_action :find_api_by_params, only: [:new, :create, :edit, :update]
+  before_action :find_api_by_params, only: [:new, :create, :edit, :update, :destroy]
   before_action :json_owner, except: [:new, :create]
 
   def new
@@ -19,6 +19,13 @@ class JsonsController < ApplicationController
   def update
     @json = @api.jsons.find(params[:id])
     @json.update(json_params)
+    redirect_to api_path(@api)
+  end
+
+  def destroy
+    @json = @api.jsons.find(params[:id])
+    @json.destroy
+    flash[:notice] = "JSON successfully deleted"
     redirect_to api_path(@api)
   end
 

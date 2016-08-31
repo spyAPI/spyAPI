@@ -36,6 +36,7 @@ feature 'updating an API' do
     click_link 'Test API'
     click_link 'Delete API'
     expect(page).not_to(have_content("Test API"))
+    expect(page).to have_content 'API successfully deleted'
   end
 
   scenario 'JSONs associated with the API are also deleted when an API is deleted' do

@@ -12,6 +12,8 @@
     name: <%= json.name %>
     content: <%= json.content %>
     <%= link_to 'Edit JSON', edit_api_json_path(@api, json) %>
+    <%= link_to 'Delete JSON', api_json_path(@api,json), method: :delete %>
+
   <% end %>
   <% else %>
   No JSONs yet

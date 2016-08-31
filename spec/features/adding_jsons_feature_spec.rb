@@ -35,20 +35,27 @@ feature 'adding JSONs' do
     end
   end
 
-  context 'editing JSONs'
-  scenario 'user can update a JSON' do
-    add_JSON
-    visit '/'
-    click_link 'Test API'
-    click_link 'Edit JSON'
-    fill_in 'Name', with: 'More test-data'
-    fill_in 'Content', with: '{"different message":"goodbye world"}'
-    click_button 'Update Json'
-    expect(page).to have_content '{"different message":"goodbye world"}'
-    expect(page).not_to have_content '{"message":"hello world"}'
+  context 'editing JSONs' do
+    scenario 'user can update a JSON' do
+      add_JSON
+      click_link 'Edit JSON'
+      fill_in 'Name', with: 'More test-data'
+      fill_in 'Content', with: '{"different message":"goodbye world"}'
+      click_button 'Update Json'
+      expect(page).to have_content '{"different message":"goodbye world"}'
+      expect(page).not_to have_content '{"message":"hello world"}'
+    end
   end
 
+  context 'deleting JSONs' do
+    scenario 'user can delete a JSON' do
+      add_JSON
+      click_link 'Delete JSON'
+      expect(page).not_to have_content '{"message":"hello world"}'
+      expect(page).to have_content 'JSON successfully deleted'
 
+    end
+  end
 
 
 end
