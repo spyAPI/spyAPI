@@ -1,20 +1,13 @@
 
-
-<h3> Your account: </h3>
-
-<div class=" col-md-4" id="api-list">
+<div class="col-md-4 dash-column" id="api-list">
 <% if current_user.apis.any? %>
-  <h4>Your APIs</h4>
   <% current_user.apis.each do |api| %>
   <div class="api">
     <div class="api-name"> <%= link_to api.name, api_path(api) %> </div>
   </div>
   <% end %>
 <% end %>
-
-<%= link_to "add API", new_api_path %>
-</div>
-<div class="col-md-4" id="json-list">test</div>
-
-<div class="col-md-4" id="json-view">third col
+  <div id='add-api' class="api">
+    <%= link_to "add API", new_api_path %>
+  </div>
 </div>

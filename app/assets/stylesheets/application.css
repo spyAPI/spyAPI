@@ -15,6 +15,7 @@
  */
 body {
   background-color: white;
+  font-family: 'lato'
 }
 
 .center {
@@ -28,21 +29,80 @@ body {
 }
 
 div#dashboard {
-  border: solid;
+  /*border: solid;*/
+  /*border-color: white;*/
 }
 
 #api-list {
-    background-color: salmon;
+    background-color: rgb(51, 173, 255);
+    font-weight: bold;
 }
 
 .api {
-    border: dashed;
+    /*border: dashed;*/
+    font
 }
 
 #json-list {
-  background-color: gold;
+  background-color: #99d6ff;
 }
 
 #json-view {
-  background-color: dodgerblue;
+  background-color: rgb(230, 245, 255);
+}
+.api {
+    margin: 10px;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 20px;
+    background-color: white;
+    border: none;
+    text-align: center;
+    padding: 10px;
+}
+
+#add-api {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: dashed;
+    border-color: white;
+}
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    background: black;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+.starter-template {
+  height: 800px;
+}
+
+#dashboard {
+    height: 100%;
+}
+.dash-column {
+  height: 90%;
+    /*border: solid;*/
+    /*border-color: white;*/
+    overflow-y: scroll;
+}
+.footer {
+    text-align: center;
+}
+.dash-button {
+    /*display: inline;*/
+    /*padding: 5px;
+    margin: 5px;*/
+    background-color: white;
+    font-size: 1.5em;
+    color: black;
+    /*border: solid;*/
+    /*border-radius: 10px;*/
+    position: relative;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+     padding-right: 0px; 
+     padding-left: 0px;
 }
