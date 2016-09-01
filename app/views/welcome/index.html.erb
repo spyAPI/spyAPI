@@ -1,12 +1,20 @@
 
-<center>
-    <h1>Welcome to Spy API</h1>
+<div id="main">
 
-    <% if user_signed_in? %>
+  <h1 id="spy-header">Welcome to Spy API</h1>
+
+  <% if user_signed_in? %>
+
+    <div id="dashboard">
       <%= render "dashboard" %>
-    <% else %>
+    </div>
+
+  <% else %>
+
+    <div id="introduction">
       <%= render "introduction" %>
-    <% end %>
+    </div>
 
+  <% end %>
 
-</center>
+</div>
