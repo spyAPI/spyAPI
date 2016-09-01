@@ -8,7 +8,7 @@ feature 'adding an API' do
     expect(current_path).to eq '/apis/new'
     fill_in 'Name', with: 'Test API'
     click_button 'Create Api'
-    expect(page).to have_content 'name: Test API'
+    expect(page).to have_link 'Test API'
   end
 
   context 'User is able to view their own API' do

@@ -1,6 +1,7 @@
+<h3> Your account: </h3>
+<%= link_to "add API", new_api_path %>
+
 <% if current_user.apis.any? %>
-  <h3> Your account: </h3>
-  <%= link_to "add API", new_api_path %>
   <div class="api-list">
     <h4>Your APIs</h4>
     <% current_user.apis.each do |api| %>
