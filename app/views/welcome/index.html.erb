@@ -1,11 +1,13 @@
 
-<div id="main">
+<div class="row">
 
   <h1 id="spy-header">Welcome to Spy API</h1>
+</div>
 
-  <% if user_signed_in? %>
+  <div class="row">
+    <% if user_signed_in? %>
 
-    <div id="dashboard">
+    <div class="col-md-12" id="dashboard">
       <%= render "dashboard" %>
     </div>
 
@@ -16,5 +18,4 @@
     </div>
 
   <% end %>
-
 </div>

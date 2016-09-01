@@ -26,3 +26,23 @@ body {
 .starter-template {
     margin-top: 50px;
 }
+
+div#dashboard {
+  border: solid;
+}
+
+#api-list {
+    background-color: salmon;
+}
+
+.api {
+    border: dashed;
+}
+
+#json-list {
+  background-color: gold;
+}
+
+#json-view {
+  background-color: dodgerblue;
+}
