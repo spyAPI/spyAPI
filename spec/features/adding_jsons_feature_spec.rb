@@ -73,6 +73,7 @@ feature 'adding JSONs' do
       add_JSON(content: 'this is not a json')
       fill_in 'Content', with: '{"status":"correct"}'
       click_button 'Create Json'
+      click_link 'Test-data'
       expect(page).to have_content '{"status":"correct"}'
       expect(page).not_to have_content('Content is not a valid JSON')
 
