@@ -9,11 +9,8 @@
 <% if @api.jsons.any? %>
   JSONs attached to this API:<br>
   <% @api.jsons.each do |json| %>
-    name: <%= json.name %>
-    content: <%= json.content %>
-    <%= link_to 'Edit JSON', edit_api_json_path(@api, json) %>
-    <%= link_to 'Delete JSON', api_json_path(@api,json), method: :delete %>
-
+    name: <%= link_to json.name, api_json_path(@api,json) %>
+    
   <% end %>
   <% else %>
   No JSONs yet

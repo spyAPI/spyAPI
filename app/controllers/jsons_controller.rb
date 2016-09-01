@@ -1,6 +1,6 @@
 class JsonsController < ApplicationController
 
-  before_action :find_api_by_params, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_api_by_params, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :json_owner, except: [:new, :create]
 
   def new
@@ -10,6 +10,10 @@ class JsonsController < ApplicationController
   def create
     @json = @api.jsons.create(json_params)
     redirect_to api_path(@api)
+  end
+
+  def show
+    @json = @api.jsons.find(params[:id])
   end
 
   def edit
