@@ -1,7 +1,3 @@
-class Json < ApplicationRecord
-  belongs_to :api
-end
-
 class String
   def is_json?
     begin

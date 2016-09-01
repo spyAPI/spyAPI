@@ -8,8 +8,14 @@ class JsonsController < ApplicationController
   end
 
   def create
-    @json = @api.jsons.create(json_params)
-    redirect_to api_path(@api)
+    @json = @api.jsons.new(json_params)
+    if @json[:content].is_json?
+      @json.save
+      redirect_to api_path(@api)
+    else
+      flash.now[:alert] = 'Content is not a valid JSON'
+      render :new
+    end
   end
 
   def edit

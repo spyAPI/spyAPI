@@ -57,5 +57,21 @@ feature 'adding JSONs' do
     end
   end
 
+  context 'JSON validation' do
+    scenario 'attempting to add an incorrectly formatted JSON' do
+      add_JSON(content: 'this is not a json')
+      expect(page).to have_content('Content is not a valid JSON')
+      expect(current_path).to eq "/apis/#{Api.last.id}/jsons"
+    end
+    scenario 'attempting to add an incorrectly formatted JSON, then correcting it' do
+      add_JSON(content: 'this is not a json')
+      fill_in 'Content', with: '{"status":"correct"}'
+      click_button 'Create Json'
+      expect(page).to have_content '{"status":"correct"}'
+      expect(page).not_to have_content('Content is not a valid JSON')
+
+    end
+  end
+
 
 end
