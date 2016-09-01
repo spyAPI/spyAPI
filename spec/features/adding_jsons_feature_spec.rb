@@ -29,8 +29,10 @@ feature 'adding JSONs' do
 
 
   context 'viewing JSONs' do
-    scenario 'user can view JSON' do
+    scenario 'user can view JSON on its own page' do
       add_JSON
+      expect(page).to have_link 'Test-data'
+      click_link 'Test-data'
       expect(page).to have_content '{"message":"hello world"}'
     end
   end
@@ -38,10 +40,13 @@ feature 'adding JSONs' do
   context 'editing JSONs' do
     scenario 'user can update a JSON' do
       add_JSON
+      click_link 'Test-data'
       click_link 'Edit JSON'
       fill_in 'Name', with: 'More test-data'
       fill_in 'Content', with: '{"different message":"goodbye world"}'
       click_button 'Update Json'
+      expect(page).to have_link 'More test-data'
+      click_link 'More test-data'
       expect(page).to have_content '{"different message":"goodbye world"}'
       expect(page).not_to have_content '{"message":"hello world"}'
     end
@@ -50,6 +55,7 @@ feature 'adding JSONs' do
   context 'deleting JSONs' do
     scenario 'user can delete a JSON' do
       add_JSON
+      click_link 'Test-data'
       click_link 'Delete JSON'
       expect(page).not_to have_content '{"message":"hello world"}'
       expect(page).to have_content 'JSON successfully deleted'
