@@ -40,12 +40,7 @@ feature 'updating an API' do
   end
 
   scenario 'JSONs associated with the API are also deleted when an API is deleted' do
-    visit '/'
-    click_link 'Test API'
-    click_link 'Add JSON'
-    fill_in 'Name', with: "Test 1"
-    fill_in 'Content', with: "String for testing"
-    click_button 'Create Json'
+    add_JSON
     click_link 'Delete API'
     expect(page).not_to(have_content("Test 1"))
   end
