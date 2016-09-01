@@ -19,15 +19,22 @@
         <p>API url: https://spy-api.herokuapp.com/apis?api-key=<%=@api.key%>&json=<%=@json.name%></p>
         <br>
           name: <%= @json.name %>
-          <%= link_to 'Edit JSON', edit_api_json_path(@api, @json) %>
           <%= link_to 'Delete JSON', api_json_path(@api,@json), method: :delete %>
           content: <%= @json.content %>
       <% end %>
     </div>
-    <div class="col-md-4 footer"><div id='api-list' class='dash-button'>Add API</div></div>
-    <div class="col-md-2 footer"><div id='json-list' class='dash-button'>Edit API</div></div>
-    <div class="col-md-2 footer"><div id='json-list' class='dash-button'>Add JSON</div></div>
-    <div class="col-md-4 footer"><div id='json-view' class='dash-button'>Edit JSON</div></div>
+
+  <div class="col-md-4 footer"><div id='api-list' class='dash-button'> <%= link_to 'add API', new_api_path %> </div></div>
+    <div class="col-md-4 footer">
+      <div id='json-list' class='dash-button'>
+      <%= link_to 'Add JSON', new_api_json_path(@api) %>
+    </div>
+  </div>
+    <div class="col-md-4 footer">
+      <div id='json-view' class='dash-button'>
+      <%= link_to 'Edit JSON', edit_api_json_path(@api, @json) %>
+    </div>
+  </div>
 </div>
 <% end %>
 
