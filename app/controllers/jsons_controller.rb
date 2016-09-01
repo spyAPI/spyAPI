@@ -11,13 +11,13 @@ class JsonsController < ApplicationController
     @json = @api.jsons.new(json_params)
 
     if @json[:content].is_json?
-      # if unique_title?
+      if unique_title?
         @json.save
         redirect_to api_path(@api)
-      # else
-      #   flash.now[:alert] = "Name has already been used"
-      #   render :new
-      # end
+      else
+        flash.now[:alert] = "Name has already been used"
+        render :new
+      end
     else
       flash.now[:alert] = 'Content is not a valid JSON'
       render :new
@@ -64,7 +64,7 @@ class JsonsController < ApplicationController
   end
 
   def unique_title?
-    @api.jsons.where(:name == @json.name).count == 0
+    @api.jsons.where(name: @json.name).count == 0
   end
 
 end
