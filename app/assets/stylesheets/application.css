@@ -22,6 +22,7 @@ body {
   list-style-position:inside;
   font-size: 18px;
 }
-/*.starter-template {
-    margin: auto;
-}*/
+
+.starter-template {
+    margin-top: 50px;
+}

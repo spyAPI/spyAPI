@@ -1,0 +1,12 @@
+<% if current_user.apis.any? %>
+  <h3> Your account: </h3>
+  <%= link_to "add API", new_api_path %>
+  <div class="api-list">
+    <h4>Your APIs</h4>
+    <% current_user.apis.each do |api| %>
+      <div class="api">
+        <div class="api-name"> <%= link_to api.name, api_path(api) %> </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
