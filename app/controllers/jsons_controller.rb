@@ -9,9 +9,15 @@ class JsonsController < ApplicationController
 
   def create
     @json = @api.jsons.new(json_params)
+
     if @json[:content].is_json?
-      @json.save
-      redirect_to api_path(@api)
+      if unique_title?
+        @json.save
+        redirect_to api_path(@api)
+      else
+        flash.now[:alert] = "Name has already been used"
+        render :new
+      end
     else
       flash.now[:alert] = 'Content is not a valid JSON'
       render :new
@@ -55,6 +61,10 @@ class JsonsController < ApplicationController
       flash[:notice] = "Permission denied: only owner has access"
       redirect_to '/'
     end
+  end
+
+  def unique_title?
+    @api.jsons.where(:name == @json.name).count == 0
   end
 
 end

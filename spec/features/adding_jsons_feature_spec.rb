@@ -90,5 +90,21 @@ feature 'adding JSONs' do
     end
   end
 
+  context 'JSON names associated with an API key must be unique' do
+    it 'does not allow a user to save the same JSON name twice on a single API' do
+      add_JSON
+      add_JSON
+      expect(page).to(have_content('Name has already been used'))
+      expect(current_path).to(eq("/apis/#{Api.last.id}/jsons"))
+    end
+    it 'does allow a user to save the same JSON name on different APIs' do
+      add_JSON
+      expect(page).to(have_content('Test-data'))
+      add_api(name: "Second test API")
+      add_JSON(link: "Second test API")
+      expect(page).to(have_content('Test-data'))
+    end
+  end
+
 
 end
