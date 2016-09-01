@@ -35,6 +35,16 @@ feature 'adding JSONs' do
       click_link 'Test-data'
       expect(page).to have_content '{"message":"hello world"}'
     end
+
+
+    scenario 'JSON pages have the api link' do
+      add_JSON
+      expect(page).to have_link 'Test-data'
+      click_link 'Test-data'
+      expect(page).to have_content 'API url:'
+      expect(page).to have_content "/apis?api-key=#{Api.last.key}&json=Test-data"
+    end
+
   end
 
   context 'editing JSONs' do
