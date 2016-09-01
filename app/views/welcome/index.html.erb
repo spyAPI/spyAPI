@@ -1,30 +1,12 @@
 
 <center>
     <h1>Welcome to Spy API</h1>
-    <p class="lead">Spy API is a development tool that makes testing your app easier.
-      It mocks JSON responses from third party APIs, letting you build your app
-      without making endless requests to other sites. Best of all, you decide
-      what response you want to get back, so you're never dealing with more
-      data than you need.
-    </p>
-      <h3>How it works:</h3>
-    <ol class="center">
-        <li> Sign up for an account</li>
-        <li> Generate an API key and upload a JSON</li>
-        <li> Make your requests at:
-          https://spy-api.herokuapp.com/apis?api-key=YOUR_KEY&json=JSON_NAME</li>
 
-    </ol>
+    <% if user_signed_in? %>
+      <%= render "dashboard" %>
+    <% else %>
+      <%= render "introduction" %>
+    <% end %>
 
-      <% if user_signed_in? && current_user.apis.any? %>
-        <h3> Your account: </h3>
-        <div class="api-list">
-          <% current_user.apis.each do |api| %>
-            <div class="api">
-              <div class="api-name"> name: <%= link_to api.name, api_path(api) %> </div>
-              <div class="api-key"> key: <%= api.key %> </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+
 </center>
