@@ -214,34 +214,21 @@ input#json_name {
     padding: 5px;
     padding-bottom: 0;
 }
-.new_api {
-      text-align: center;
+.new_api, .edit_api, .new_json, .edit_json {
+    text-align: center;
     background-color: white;
-    height: 40%;
+    height: 60%;
     margin: 15px;
 }
-.new_json{
-        text-align: center;
-      background-color: white;
-      height: 40%;
-      margin: 15px;
-
-}
 .form-group {
-      color: rgba(255, 255, 255, 0.7);
-      padding-top: 50px;
+  color: black;
+  padding-top: 50px;
 }
 input:focus{
   outline: none;
 }
 div#name-field {
     margin-bottom: 20px;
-}
-.new_json {
-    text-align: center;
-    background-color: white;
-    height: 60%;
-    margin: 15px;
 }
 h2{
   text-align: center;
