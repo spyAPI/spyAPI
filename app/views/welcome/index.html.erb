@@ -1,11 +1,10 @@
 
-<div id="main">
 
-  <h1 id="spy-header">Welcome to Spy API</h1>
+  <div class="row">
+  <div class="col-md-4 footer">Your APIs</div>
+    <% if user_signed_in? %>
 
-  <% if user_signed_in? %>
-
-    <div id="dashboard">
+    <div class="col-md-12" id="dashboard">
       <%= render "dashboard" %>
     </div>
 
@@ -16,5 +15,5 @@
     </div>
 
   <% end %>
-
+  <div class="col-md-4 footer"><div id='api-list' class='dash-button'> <%= link_to 'add API', new_api_path %> </div></div>
 </div>
