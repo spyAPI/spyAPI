@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ .h1, h1 {
+    font-size: 36px;
+    text-align: center;
+}
 body {
   background-color: white;
   font-family: 'lato'
@@ -53,6 +57,8 @@ div#dashboard {
 .api {
     margin: 10px;
     margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
     display: block;
     margin-bottom: 20px;
     background-color: white;
@@ -119,7 +125,6 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 
 }
 .api-title {
-    border-radius: 20px 20px 0px 0px;
     background-color: rgba(255, 255, 255, 0.3);
   padding: 10px;
 }

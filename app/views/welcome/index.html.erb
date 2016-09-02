@@ -1,13 +1,14 @@
 
 
   <div class="row">
-  <div class="col-md-4 header" id='api-list'>Your APIs</div>
     <% if user_signed_in? %>
+    <div class="col-md-4 header" id='api-list'>Your APIs</div>
 
     <div class="col-md-12" id="dashboard">
       <%= render "dashboard" %>
     </div>
 
+    <div class="col-md-4 footer"><div id='api-list' class='dash-button'> <%= link_to 'add API', new_api_path %> </div></div>
   <% else %>
 
     <div id="introduction">
@@ -15,5 +16,4 @@
     </div>
 
   <% end %>
-  <div class="col-md-4 footer"><div id='api-list' class='dash-button'> <%= link_to 'add API', new_api_path %> </div></div>
 </div>
