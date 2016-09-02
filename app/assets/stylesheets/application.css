@@ -38,7 +38,7 @@ div#dashboard {
 }
 
 #api-list {
-    background-color: rgb(127, 102, 204);
+    background-color: rgb(0, 0, 0);
     font-weight: bold;
 }
 
@@ -48,11 +48,11 @@ div#dashboard {
 }
 
 #json-list {
-  background-color: rgb(133, 112, 194);
+  background-color: rgb(0, 0, 0);
 }
 
 #json-view {
-  background-color: rgb(138, 122, 184);
+  background-color: rgb(0, 0, 0);
 }
 .api {
     margin: 10px;
@@ -155,4 +155,42 @@ a {
     border-radius: 20px 20px 0px 0px;
     padding: 5px;
     color: rgba(255, 255, 255, 0.8);
+}
+#logo{
+    margin: -200px;
+}
+img{
+      transform: scale(0.5);
+}
+div#introduction {
+    margin-top: 100px;
+}
+.h3, h3 {
+    font-size: 24px;
+    text-align: center;
+}
+#flash {
+    position: absolute;
+    top: 100px;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+    margin-top: 200px;
+}
+textarea{
+    width: 750px;
+    height: 200px;
+}
+.btn-primary {
+    background-color: black;
+    border-color: transparent;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: grey;
+    border-color: #transparent;
 }
