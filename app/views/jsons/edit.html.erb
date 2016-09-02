@@ -1,9 +1,36 @@
-<%= form_for [@api, @json] do |f| %>
-<div class="form-group">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <%= f.submit class: 'btn btn-primary'%>
+
+  <div class="row">
+    <div class="col-md-4 header" id='api-list'>Your APIs</div>
+    <div class="col-md-8 header" id='json-list'> New JSON in <%= @api.name %> </div>
+
+    <% if user_signed_in? %>
+
+    <div class="col-md-12" id="dashboard">
+      <%= render partial: "welcome/dashboard" %>
+
+    <div class="col-md-8 dash-column" id="json-list">
+    <%= form_for [@api, @json] do |f| %>
+    <div class="form-group">
+      <div id='name-field'><%= f.label :name %>
+      <%= f.text_field :name  %>
+    </div>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+    <% end %>
+    </div>
+
 </div>
 <% end %>
+  <div class="col-md-4 footer">
+    <div id='api-list' class='dash-button'>
+      <%= link_to 'add API', new_api_path %>
+    </div>
+  </div>
+    <div class="col-md-8 footer">
+      <div id='json-list' class='dash-button'>
+    </div>
+  </div>
+
+</div>

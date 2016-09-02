@@ -1,28 +1,28 @@
 
-  <div class="row">
-    <div class="col-md-4 header" id='api-list'>Your APIs</div>
-    <div class="col-md-4 header" id='json-list'> JSONS in <%=@api.name %></div>
+<div class="row">
+  <div class="col-md-4 header" id='api-list'>Your APIs</div>
+  <div class="col-md-4 header" id='json-list'> JSONS in <%=@api.name %></div>
 
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
 
-    <div class="col-md-12" id="dashboard">
-      <%= render partial: "welcome/dashboard" %>
+  <div class="col-md-12" id="dashboard">
+    <%= render partial: "welcome/dashboard" %>
 
     <div class="col-md-4 dash-column" id="json-list">
       <%= render "jsons-list" %>
     </div>
-
-
-</div>
-<div class="col-md-4 footer">
-  <div id='api-list' class='dash-button'>
-    <%= link_to 'add API', new_api_path %>
   </div>
 </div>
-<div class="col-md-4 footer">
-  <div id='json-list' class='dash-button'>
-    <%= link_to 'Add JSON', new_api_json_path(@api) %>
+<div class="row">
+  <div class="col-md-4 footer">
+    <div id='api-list' class='dash-button'>
+      <%= link_to 'add API', new_api_path %>
+    </div>
   </div>
-</div>
-<% end %>
+  <div class="col-md-4 footer">
+    <div id='json-list' class='dash-button'>
+      <%= link_to 'Add JSON', new_api_json_path(@api) %>
+    </div>
+  </div>
+  <% end %>
 </div>
