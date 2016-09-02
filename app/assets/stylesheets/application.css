@@ -228,7 +228,7 @@ input#json_name {
 
 }
 .form-group {
-      color: black;
+      color: rgba(255, 255, 255, 0.7);
       padding-top: 50px;
 }
 input:focus{
