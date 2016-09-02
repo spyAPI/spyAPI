@@ -1,3 +1,5 @@
+require './lib/json_check'
+
 class JsonsController < ApplicationController
 
   before_action :find_api_by_params, only: [:new, :create, :show, :edit, :update, :destroy]
