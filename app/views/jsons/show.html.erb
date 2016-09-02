@@ -20,7 +20,9 @@
         <br>
           name: <%= @json.name %>
           <%= link_to 'Delete JSON', api_json_path(@api,@json), method: :delete %>
-          content: <%= @json.content %>
+          <div class="json-content">
+            content: <%= @json.content %>
+          </div>
       <% end %>
     </div>
 

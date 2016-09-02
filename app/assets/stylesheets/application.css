@@ -40,7 +40,7 @@ div#dashboard {
 
 .api {
     /*border: dashed;*/
-    font
+
 }
 
 #json-list {
@@ -128,4 +128,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 div#key {
     text-align: center;
     font-size: 1.5em;
+}
+.json-content {
+    padding: 10px;
+    overflow-wrap: break-word;
 }
