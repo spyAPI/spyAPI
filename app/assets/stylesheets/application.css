@@ -59,6 +59,8 @@ div#dashboard {
     border: none;
     text-align: center;
     padding: 10px;
+    font-size: 1.4em;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 #add-api {
@@ -94,7 +96,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
     position: relative;
     border: solid;
     border-color: white;
-    border-radius: 30px;
+    border-radius: 0px 0px 30px 30px;
     color: white;
 
 }
@@ -113,7 +115,6 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
   padding: 15px;
   border: solid;
   border-color: white;
-  border-radius: 30px;
       color: white;
 
 }
@@ -132,4 +133,21 @@ div#key {
 .json-content {
     padding: 10px;
     overflow-wrap: break-word;
+}
+a:focus, a:hover {
+    color: white;
+     text-decoration: none;
+}
+a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+.header {
+    text-align: center;
+    font-size: 1.7em;
+    border: solid;
+    border-color: white;
+    border-radius: 20px 20px 0px 0px;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.8);
 }

@@ -1,8 +1,8 @@
 
   <div class="row">
-    <div class="col-md-4 footer">Your APIs</div>
-    <div class="col-md-4 footer"> JSONS in <%=@api.name %></div>
-    <div class="col-md-4 footer"> <%= @json.name %> </div>
+    <div class="col-md-4 header" id='api-list'>Your APIs</div>
+    <div class="col-md-4 header" id='json-list'> JSONS in <%=@api.name %></div>
+    <div class="col-md-4 header" id='json-view'> <%= @json.name %> </div>
 
     <% if user_signed_in? %>
 
@@ -16,13 +16,13 @@
     <div class="col-md-4 dash-column" id="json-view">
       <% if @api.jsons.any? %>
 
-        <p>API url: https://spy-api.herokuapp.com/apis?api-key=<%=@api.key%>&json=<%=@json.name%></p>
+        <p>API url: <query class='json-content'>https://spy-api.herokuapp.com/apis?api-key=<%=@api.key%>&json=<%=@json.name%></query></p>
         <br>
           name: <%= @json.name %>
-          <%= link_to 'Delete JSON', api_json_path(@api,@json), method: :delete %>
           <div class="json-content">
             content: <%= @json.content %>
           </div>
+          <%= link_to 'Delete JSON', api_json_path(@api,@json), method: :delete %>
       <% end %>
     </div>
 
