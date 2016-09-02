@@ -12,7 +12,7 @@
       <%= form_for @api, html: {multipart: true} do |f| %>
       <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name, focus: 'autofocus' %>
+        <%= f.text_field :name, placeholder: 'MyAPI' %>
         <%= f.submit class: 'btn btn-primary'%>
         <% end %>
       </div>

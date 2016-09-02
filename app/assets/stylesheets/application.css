@@ -185,7 +185,8 @@ div#introduction {
 textarea {
     width: 95%;
     height: 200px;
-  }
+    border: solid;
+}
 .btn-primary {
     background-color: black;
     border-color: transparent;
@@ -196,6 +197,15 @@ textarea {
     border-color: #transparent;
 }
 input#api_name {
+  background-color: transparent;
+    /* border-bottom-color: bla; */
+    border: solid;
+    border-color: transparent;
+    border-bottom-color: black;
+    padding: 5px;
+    padding-bottom: 0;
+}
+input#json_name {
   background-color: transparent;
     /* border-bottom-color: bla; */
     border: solid;
@@ -232,4 +242,11 @@ div#name-field {
     background-color: white;
     height: 60%;
     margin: 15px;
+}
+h2{
+  text-align: center;
+  margin-top: 100px;
+}
+form#new_user {
+    text-align: center;
 }
