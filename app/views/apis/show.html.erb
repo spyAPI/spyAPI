@@ -12,16 +12,17 @@
       <%= render "jsons-list" %>
     </div>
 
+
+</div>
+<div class="col-md-4 footer">
+  <div id='api-list' class='dash-button'>
+    <%= link_to 'add API', new_api_path %>
+  </div>
+</div>
+<div class="col-md-4 footer">
+  <div id='json-list' class='dash-button'>
+    <%= link_to 'Add JSON', new_api_json_path(@api) %>
+  </div>
 </div>
 <% end %>
-  <div class="col-md-4 footer">
-    <div id='api-list' class='dash-button'>
-      <%= link_to 'add API', new_api_path %>
-    </div>
-  </div>
-    <div class="col-md-4 footer">
-      <div id='json-list' class='dash-button'>
-      <%= link_to 'Add JSON', new_api_json_path(@api) %>
-    </div>
-  </div>
 </div>
